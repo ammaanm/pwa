@@ -5,7 +5,7 @@ import tailwindcss from "tailwindcss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root:"pwa",
+  base:"pwa",
   plugins: [
     solid(),
     VitePWA({
