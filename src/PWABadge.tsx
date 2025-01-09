@@ -40,7 +40,7 @@ const PWABadge: Component = () => {
           <div class={styles.Message}>
             <span id="toast-message">New unpdate available, click on reload button to update.</span>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between w-full">
             <button class={styles.ToastButton} onClick={() => updateServiceWorker()}>Reload</button>
             <button class={styles.ToastButton} onClick={() => close()}>Close</button>
           </div>
