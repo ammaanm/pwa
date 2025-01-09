@@ -6,8 +6,12 @@ function App() {
   function onInput(e: InputEvent) {
     //@ts-ignore
     const inp: HTMLInputElement = e.target;
-    if (!RegExp(/^[0-9]*$/g).exec(inp.value)) {
-      e.preventDefault();
+    if (!(/^\d*$/g.test(inp.value))) {
+      const pos = inp.selectionStart || 0
+      const newVal = Array.from(inp.value.matchAll(/\d/g))?.join("") || ""
+      const newPos = pos - (inp.value.length - newVal.length)
+      inp.value = newVal;
+      inp.setSelectionRange(newPos, newPos)
       return;
     }
     if (inp.value.startsWith("0")) {
@@ -20,7 +24,7 @@ function App() {
     <>
       <PWABadge />
       {/* <div class="m-auto w-[80%]"> */}
-      <div class="flex my-4 mx-2">
+      <div class="w-fit m-auto text-[5vw]">
         <label for="num-input" class="w-56">
           Enter a number:{" "}
         </label>
@@ -28,13 +32,13 @@ function App() {
           type="text"
           id="num-input"
           maxLength={3}
-          class="m-auto w-full border-2 flex-grow"
+          class="m-auto w-14 border-2 text-slate-600 text-center"
           onInput={onInput}
         />
       </div>
       <br />
       <div class="m-auto w-fit">
-        <div class="text-[48vw] w-100% overflow-x-auto">
+        <div class="text-[48vw] w-100% overflow-x-auto text-slate-800">
           <b>{Number.isInteger(count()) ? count() + 1 : "??"}</b>
         </div>
       </div>
