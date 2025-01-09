@@ -32,14 +32,14 @@ function App() {
           type="text"
           id="num-input"
           maxLength={3}
-          class="m-auto w-14 border-2 text-slate-600 text-center"
+          class="m-auto w-[15vw] border-2 text-slate-600 text-center"
           onInput={onInput}
         />
       </div>
       <br />
       <div class="m-auto w-fit">
-        <div class="text-[48vw] w-100% overflow-x-auto text-slate-800">
-          <b>{Number.isInteger(count()) ? count() + 1 : "??"}</b>
+        <div class="text-[50svh] w-100% text-slate-800">
+          <b>{Number.isInteger(count()) ? count() + 1 : "???"}</b>
         </div>
       </div>
       {/* </div> */}
