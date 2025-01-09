@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <PWABadge />
-      <div class="m-auto w-[80%] border">
+      <div class="m-auto w-[80%] border border-amber-400">
         <input
           type="number"
           class="m-auto w-full border-2"
